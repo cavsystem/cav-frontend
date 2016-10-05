@@ -1,0 +1,308 @@
+<div ng-controller="dashboardCtrl" ng-init="iniciar()">
+
+<div class="row">
+<div class="col-lg-12">
+<div class="wrapper wrapper-content">
+<div class="row">
+  
+ <div class="col-lg-4">
+ <a href >
+        <div class="widget style1 navy-bg">
+            <div class="row">
+                <div class="col-xs-4">
+                    <i class="fa fa-users fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+                   <h2 class="font-bold">Visitantes</h2>
+                </div>
+            </div>
+        </div>
+    </a>
+    </div>
+
+<div class="col-lg-4">
+<a href >
+<div class="widget style1 lazur-bg">
+            <div class="row">
+                <div class="col-xs-4">
+                    <i class="fa fa-envelope-o fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+                    <h2 class="font-bold">Correspondêcias</h2>
+                </div>
+            </div>
+        </div>
+        </a>
+</div>
+<div class="col-lg-4">
+<a href >
+        <div class="widget style1 red-bg">
+            <div class="row">
+                <div class="col-xs-4">
+                    <i class="fa fa-file-text fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+                    <h2 class="font-bold">Ocorrências</h2>
+                </div>
+            </div>
+        </div>
+        </a>
+</div>
+
+
+    </div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><i class="fa fa-users"></i> Visitantes Presentes no condomínio</h5>
+
+            <!-- This is example of local custom ibox tools -->
+            <div class="ibox-tools">
+                <span class="label label-warning-light" style="float:right;" >10 Visitantes</span>
+            </div>
+        </div>
+        <div class="ibox-content">
+
+            <div>
+                <div class="feed-activity-list">
+
+                    <div class="feed-element">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" src="img/profile.jpg">
+                        </a>
+
+                        <div class="media-body ">
+                            <small class="pull-right"><button type="button" class="btn btn-outline btn-success">Finalizar visita</button></small>
+                            <strong>Monica Smith</strong> posted a new blog. <br>
+                            <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
+
+                        </div>
+                    </div>
+
+                    <div class="feed-element">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" src="img/a2.jpg">
+                        </a>
+
+                        <div class="media-body ">
+                            <small class="pull-right">2h ago</small>
+                            <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
+                            <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
+                        </div>
+                    </div>
+                    <div class="feed-element">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" src="img/a3.jpg">
+                        </a>
+
+                        <div class="media-body ">
+                            <small class="pull-right">2h ago</small>
+                            <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
+                            <small class="text-muted">2 days ago at 8:30am</small>
+                        </div>
+                    </div>
+                    <div class="feed-element">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" src="img/a4.jpg">
+                        </a>
+
+                        <div class="media-body ">
+                            <small class="pull-right text-navy">5h ago</small>
+                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                            <div class="actions">
+                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feed-element">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" src="img/a5.jpg">
+                        </a>
+
+                        <div class="media-body ">
+                            <small class="pull-right">2h ago</small>
+                            <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site. <br>
+                            <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
+                            <div class="well">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                            </div>
+                            <div class="pull-right">
+                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feed-element">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" src="img/profile.jpg">
+                        </a>
+
+                        <div class="media-body ">
+                            <small class="pull-right">23h ago</small>
+                            <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                            <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                        </div>
+                    </div>
+                    <div class="feed-element">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" src="img/a7.jpg">
+                        </a>
+
+                        <div class="media-body ">
+                            <small class="pull-right">46h ago</small>
+                            <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                            <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-block m-t"><i class="fa fa-arrow-down"></i> Mostrar outros</button>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+  <div class="col-lg-6">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Ações</h5>
+        </div>
+
+        <div class="ibox-content">
+<div class="row">
+        <div class="col-lg-6">
+ <form  class="form-horizontal" >
+                 <div class="form-group" ng-hide="isCadastrar">                
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" placeholder="Buscar por CPF" ng-model="cpf">
+                            </div>
+                            <button type="button" class="btn btn-outline btn-success" ng-model="cpf"  ng-click="buscarVisitante(cpf)">Buscar</button>
+                </div>
+                            <div ng-hide="isCadastrar"  class="hr-line-dashed"></div>
+
+
+                        <div class="col-sm-4" ng-show="loadingBusca">
+                        <div class="sk-spinner sk-spinner-wave">
+                            <div class="sk-rect1"></div>
+                            <div class="sk-rect2"></div>
+                            <div class="sk-rect3"></div>
+                            <div class="sk-rect4"></div>
+                            <div class="sk-rect5"></div>
+                        </div>
+                   </div>
+
+
+                   <div ng-show="isCadastrar">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                            <input type="text" class="form-control" placeholder="NOME" ng-disabled="visitante.id" 
+                            ng-model="visitante.nome"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12"><input type="text" class="form-control" placeholder="CPF" ng-disabled="visitante.id" ng-model="visitante.cpf"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="FONE" ng-model="visitante.fone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="CELULAR" ng-model="visitante.celular">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                        <div class="col-sm-4">
+                            <div><label> <input  type="radio" name="radioTest" ng-model="isVeiculo" value="S"> Sim</label>
+                            <label> <input  type="radio" name="radioTest" ng-model="isVeiculo" value="N"> Não </label></div>
+                        </div>
+                      </div>
+
+<div ng-show="isVeiculo === 'S'">
+                          <div class="form-group">
+                            <div class="col-sm-4"><input type="text" class="form-control" placeholder="PLACA" ng-model="visitante.veiculo.placa"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="MODELO" ng-model="visitante.veiculo.modelo">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="COR" ng-model="visitante.veiculo.cor">
+                            </div>
+                        </div>
+
+</div>
+
+
+
+
+
+                        <div class="hr-line-dashed"></div>
+                       
+                       <div class="row">
+                       
+                            <div class="col-sm-12">
+                        <button type="button" class="btn btn-outline btn-success"  ng-click="cadastrar()"><i class="fa fa-save"></i> Cadastrar visitante</button>
+                            
+                        <button type="button" class="btn btn-outline btn-warning"  ng-click="mostrarCamera()"><i class="fa fa-camera"></i> Foto</button>
+                            
+                        <button type="button" class="btn btn-outline btn-primary"  ng-click="limparCadastro()"><i class="fa fa-undo"></i> voltar</button>
+                        </div> 
+                        </div>
+</div>
+
+                        </form>  
+                        </div>
+                        <div class="col-lg-6">
+                        <div ng-hide="camera">
+                            
+                        </div>
+                        <div ng-show="camera">
+                            <webcam ng-hide="statusFoto" channel="channel" 
+        on-streaming="onSuccess()" 
+        on-error="onError(err)" 
+        on-stream="onStream(stream)"></webcam>
+<button type="button" class="btn btn-outline btn-success" ng-hide="statusFoto" ng-click="makeSnapshot()"><i class="fa fa-camera"></i>  Fotografar</button>
+
+
+<canvas id="snapshot" ng-show="statusFoto"  style="width:100%; "  ></canvas>
+<button type="button" class="btn btn-outline btn-danger" ng-show="statusFoto" ng-click="apagar()"><i class="fa fa-trash"></i>  Apagar Foto</button>
+</div>
+                        </div>  
+                        </div> 
+
+                        {{imagemVisitante}}
+
+   </div>                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div></div></div></div>

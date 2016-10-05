@@ -1,0 +1,130 @@
+<toaster-container></toaster-container>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Criação de maquinas virtuais</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a>Forms</a>
+            </li>
+            <li class="active">
+                <strong>Criar Maquina</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+ 
+
+
+    <div class="row" style="margin-top:10px;" ng-controller="maquinaAWSCtrl" ng-init="inicializar()">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Criação e edição
+                        <small>Criar e edição de scripts.</small>
+                    </h5>
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content">
+                    <form  class="form-horizontal">
+
+                         <div class="form-group"><label class="col-sm-2 control-label">Tipo de Instancia</label>
+
+                            <div class="col-sm-4"><select class="form-control m-b" ng-change="change()" ng-model="maquina.tipoInstancia" name="instancia">
+                            <option value="">Selecione uma instancia</option>
+                                <option value="{{item.tipo}}" ng-repeat="item in listaInstancias">{{item.tipo}}</option>
+                                
+                            </select></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label">Região</label>
+                            <div class="col-sm-4"><select class="form-control m-b" ng-change="change()" ng-model="maquina.regiao" name="regiao">
+                               <option value="">Selecione uma região</option>
+                                <option value="{{item.nome}}"  ng-repeat="item in tipoEndPonits">{{item.nome}} - {{item.endPoint}}</option>
+                         </select></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label">Credencial</label>
+                            <div class="col-sm-4"><select class="form-control m-b" ng-change="change()" ng-model="maquina.credencial" name="credencial">
+                               <option value="">Selecione uma credencial</option>
+                                <option value="{{item.id}}" ng-repeat="item in credenciais">{{item.identificacao}}</option>
+                         </select></div>
+                        </div>
+                      
+            <div class="hr-line-dashed"></div>
+
+                <div class="form-group" ng-show="statusPasso2"> 
+                <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        <div class="sk-spinner sk-spinner-wave">
+                            <div class="sk-rect1"></div>
+                            <div class="sk-rect2"></div>
+                            <div class="sk-rect3"></div>
+                            <div class="sk-rect4"></div>
+                            <div class="sk-rect5"></div>
+                        </div>
+                   </div>
+               </div>
+
+                        <div ng-show="retorna" class="form-group"><label class="col-sm-2 control-label">Tag</label>
+
+                            <div class="col-sm-4"><select class="form-control m-b" name="account">
+                                <option value="">Selecione uma tag</option>
+                                <option>Produção</option>
+                                <option>Desenvolvimento</option>
+                                <option>Homologação</option>                                
+                            </select></div>
+                        </div>
+                        <div ng-show="retorna" class="hr-line-dashed"></div>
+
+                         <div ng-show="retorna" class="form-group"><label class="col-sm-2 control-label">Grupo de segurança</label>
+
+                            <div class="row">
+                                 <div class="col-sm-4">
+                            <select class="form-control m-b" name="account">
+                               <option value="">Selecione um grupo</option>
+                                <option ng-repeat="item in listaGrupos">{{item.groupName}}</option>    
+                            </select>
+                        </div>
+                            <input class="btn btn-white" type="button" value="Criar grupo" ng-click="openCriar()" >
+
+                             
+                            <input class="btn btn-white" type="button" value="Configurações" ng-click="openConfig('lg')" >
+                           
+
+                            </div>
+                        </div>
+
+                        <div ng-show="retorna" class="form-group"><label class="col-sm-2 control-label">Key Pair</label>
+
+                            <div class="row">
+                                 <div class="col-sm-4">
+                            <select class="form-control m-b" name="account">
+                               <option value="">Selecione uma keyPair</option>
+                                <option ng-repeat="item in keys">{{item.keypair}}</option>    
+                            </select>
+                        </div>      
+
+                            </div>
+                        </div>
+
+                        <div ng-show="retorna" class="hr-line-dashed"></div>
+
+                         <div ng-show="retorna" class="form-group"><label class="col-sm-2 control-label">Imagem ID</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-model="maquina.imagem"></div>
+                        </div>
+                        </div>
+                       
+</form></div></div></div></div>
+
+
+
+
+

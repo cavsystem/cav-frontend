@@ -1,0 +1,222 @@
+<toaster-container></toaster-container>
+<div ng-controller="configuracaoCtrl" ng-init="iniciar()">
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Configurações</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Atual</a>
+            </li>
+            <li class="active">
+                <strong>{{pagAtual}}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  
+
+    <div class="row" >
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Configurar</h5>
+
+                <div ibox-tools></div>
+            </div>
+            <div class="ibox-content">
+
+
+
+                    <form  class="form-horizontal" name="config" ng-show="tela" >
+                    
+                        <div class="form-group">
+                         <label class="col-sm-3 control-label">Nome do condomínio(*)</label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" name="nome" required="true" maxlength="90" ng-model="configuracao.nome"></div>
+                        </div>
+
+                         <div class="form-group"><label class="col-sm-3 control-label" >Cnpj</label>
+                            <div class="col-sm-9">
+                            <input type="text" name="cnpj" data-mask="99.999.999/9999-99" class="form-control" ng-model="configuracao.cnpj">
+                            </div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Endereço (*)</label>
+                            <div class="col-sm-9"><input type="text" required="true" maxlength="100"  name="endereco" class="form-control" ng-model="configuracao.endereco"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Cidade (*)</label>
+                            <div class="col-sm-9"><input type="text" required="true" maxlength="50"  name="cidade" class="form-control" ng-model="configuracao.cidade"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Bairro (*)</label>
+                            <div class="col-sm-9"><input type="text" required="true" maxlength="50"  name="bairro" class="form-control" ng-model="configuracao.bairro"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Contato - 1(*)</label>
+                            <div class="col-sm-9"><input type="text" required="true"  name="contato_1" data-mask="(99) 9999-9999" class="form-control" ng-model="configuracao.contato_1"></div>
+                        </div>
+
+                         <div class="form-group"><label class="col-sm-3 control-label" >Contato - 2</label>
+                            <div class="col-sm-9"><input type="text" name="contato_2" data-mask="(99) 9999-9999" class="form-control" ng-model="configuracao.contato_2"></div>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                       <div class="form-group">
+                            <div class="col-sm-6 col-sm-offset-3">
+                        <button type="button" class="btn btn-outline btn-success" ng-show="tipoAcao()"  ng-click="cadastro(config.$invalid)"><i class="fa fa-save" ></i> Cadastrar condomínio</button>
+                        <button type="button" class="btn btn-outline btn-primary" ng-hide="tipoAcao()" ng-click="cadastro(config.$invalid)"><i class="fa fa-recycle" ></i> Alterar condomínio</button>
+                         <button type="button" class="btn btn-outline btn-warning" ng-hide="tipoAcao()" ng-click="limpar()"><i class="fa fa-plus" ></i> Novo condomínio</button>
+                            </div>
+                        </div>                       
+                       
+</form>
+<!-- Iniciar adição de administrador-->
+<div ng-hide="tela">
+ <form  class="form-horizontal" name="admin"  >
+
+                        <div class="form-group">
+                         <label class="col-sm-3 control-label"></label>
+                            <div class="col-sm-9">
+                            <h3>{{configuracao.nome}}</h3></div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                         <label class="col-sm-3 control-label">Nome(*)</label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" required="true" maxlength="80" ng-model="administrador.nome"></div>
+                        </div>
+
+                         <div class="form-group">
+                         <label class="col-sm-3 control-label">Rg</label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" data-mask="9999999"  maxlength="7" ng-model="administrador.rg"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Cpf (*)</label>
+                            <div class="col-sm-9"><input type="text" required="true" data-mask="999.999.999-99"  class="form-control" ng-model="administrador.cpf"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Contato - 1(*) </label>
+                            <div class="col-sm-9"><input type="text" required="true" data-mask="(99) 9999-9999"  class="form-control" ng-model="administrador.contato_1"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Contato - 2 </label>
+                            <div class="col-sm-9"><input type="text" data-mask="(99) 9999-9999"  class="form-control" ng-model="administrador.contato_2"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Login (*)</label>
+                            <div class="col-sm-9"><input type="text" required="true" maxlength="30" class="form-control" ng-model="administrador.usuario.login"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-3 control-label" >Senha (*)</label>
+                            <div class="col-sm-9"><input type="password" required="true" maxlength="30" class="form-control" ng-model="administrador.usuario.senha"></div>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                       <div class="form-group">
+                            <div class="col-sm-6 col-sm-offset-3">
+                        <button type="button" class="btn btn-outline btn-success"  ng-click="cadastroAdministrador(admin.$invalid)"><i class="fa fa-save" ></i> Cadastrar Administrador</button>
+                        <button type="button" class="btn btn-outline btn-primary" ng-click="administradoresVoltar()" ><i class="fa fa-reply" ></i> Voltar</button>
+                            </div>
+                        </div>         
+</form>
+
+ <div class="hr-line-dashed"></div>
+
+                             <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Contato - 1</th>
+                        <th>Contato - 2</th>
+                        <th>Login</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in administradores">
+                        <td>{{item.nome}}</td>
+                        <td>{{item.contato_1}}</td>
+                        <td>{{item.contato_2}}</td>
+                        <td>{{item.usuario.login}}</td>
+                        <td>
+                            <a href ng-click="excluir(item.id)"  ><i class="fa fa-trash"></i></a>
+                            <i class="fa fa-edit"></i>
+                            <a href ng-hide="item.usuario.status === 'S'" ><i class="fa fa-ban" ></i></a>
+                            <a href ng-show="item.usuario.status === 'S'" ><i class="fa fa-check"  ></i></a>
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+
+</div>
+
+</div></div></div>
+
+
+
+
+
+ <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Condomínios</h5>
+
+                <div ibox-tools></div>
+            </div>
+            <div class="ibox-content">
+
+
+                    <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Condomínio</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Contato 1</th>
+                        <th>Contato 2</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in lista">
+                        <td>{{item.nome}}</td>
+                        <td>{{item.endereco}}</td>
+                        <td>{{item.cidade}}</td>
+                        <td>{{item.contato_1}}</td>
+                        <td>{{item.contato_2}}</td>
+                        <td>
+                            <a href ng-click="editar(item.id)" ><i  class="fa fa-edit" style="font-size:20px;"></i></a>
+                            <a href ng-click="desativar(item.id)" ng-show="item.ativo === 'S'" >
+                            <i class="fa fa-ban" style="font-size:20px;"></i></a>
+                            <a href ng-click="ativar(item.id)" ng-show="item.ativo === 'N'"  ><i class="fa fa-check" style="font-size:20px;"></i></a>
+                            <a href ng-click="administradores(item)" ><i  class="fa fa-user" style="font-size:20px;"></i></a>
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+
+
+                        </div>                     
+            </div></div>
+
+
+
+
+
+
+
+
+
+
+
+</div></div>
+
+
+</div>

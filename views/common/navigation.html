@@ -1,0 +1,57 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="profile-element" uib-dropdown>
+                    <a uib-dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">{{main.userName}}</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Menu<b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
+                        <li><a href="">Sair</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    CAV
+                </div>
+
+            </li>
+            <li ui-sref-active="active">
+               <a ui-sref="index.dashboard"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span> </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="index.administrador"><i class="fa fa-user"></i> <span class="nav-label">Administrador</span> </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.apartamento"><i class="fa fa-building"></i> <span class="nav-label">Apartamento</span> </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.morador"><i class="fa fa-male"></i> <span class="nav-label">Morador</span></a>
+            </li>
+             <li ui-sref-active="active">
+                <a ui-sref="index.ocorrencia"><i class="fa fa-file-text-o"></i> <span class="nav-label">Ocorrência</span></a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.visitante"><i class="fa fa-users"></i> <span class="nav-label">Visitantes</span></a>
+            </li>            
+            <li ui-sref-active="active">
+                <a ui-sref="index.porteiro"><i class="fa fa-user"></i> <span class="nav-label">Porteiro</span></a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.veiculo"><i class="fa fa-car"></i> <span class="nav-label">Veículo</span></a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.configuracao"><i class="fa fa-cogs"></i> <span class="nav-label">Configurações</span></a>
+            </li>
+
+
+        </ul>
+
+    </div>
+</nav>

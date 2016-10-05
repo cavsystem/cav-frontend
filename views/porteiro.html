@@ -1,0 +1,128 @@
+<div ng-controller="porteiroCtrl" ng-init="iniciar()">
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Porteiro</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Atual</a>
+            </li>
+            <li class="active">
+                <strong>{{pagAtual}}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  
+
+    <div class="form-group">
+                            <div class="col-sm-4" ng-hide="statusAtual">
+                                     <button type="button" class="btn btn-outline btn-primary" ng-click="novo()"  >Novo Porteiro</button>
+
+                            </div>
+                            <div class="col-sm-4" ng-show="statusAtual" style="margin-bottom:15px;"> 
+          <button type="button" class="btn btn-outline btn-info" ng-click="voltar()" >Voltar</button>
+          <br/>
+                            </div>
+                        </div>
+
+    <div class="row" ng-show="statusAtual">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Cadastrados</h5>
+
+                <div ibox-tools></div>
+            </div>
+            <div class="ibox-content">
+
+
+
+                    <form  class="form-horizontal" >
+                        <div class="form-group">
+                         <label class="col-sm-2 control-label">Nome(*)</label>
+                            <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-model="credencial.identificacao"></div>
+                        </div>
+
+                         <div class="form-group">
+                         <label class="col-sm-2 control-label">Rg (*)</label>
+                            <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-model="credencial.accessKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Cpf (*)</label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Contato - 1 </label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Contato - 2 </label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Login (*)</label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Senha (*)</label>
+                            <div class="col-sm-4"><input type="password" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                       <div class="form-group">
+                            <div class="col-sm-2 col-sm-offset-2">
+                        <button type="button" class="btn btn-outline btn-success"  ng-click="cadastro()">Cadastrar Porteiro</button>
+                            </div>
+                        </div>                       
+                       
+</form></div></div></div></div></div>
+
+<div class="row" ng-hide="statusAtual">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Porteiros cadastrados</h5>
+
+                <div ibox-tools></div>
+            </div>
+            <div class="ibox-content">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>RG</th>
+                        <th>CPF</th>
+                        <th>Contato - 1</th>
+                        <th>Contato - 2</th>
+                        <th>Login</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>5757</td>
+                        <td>hoje</td>
+                        <td>teste</td>
+                        <td>ok</td>
+                        <td>hoje</td>
+                        <td>teste</td>
+                        <td>
+                            <i class="fa fa-trash"></i>
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-ban"></i>
+                            <i class="fa fa-check"></i>
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

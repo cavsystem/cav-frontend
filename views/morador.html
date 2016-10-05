@@ -1,0 +1,148 @@
+<div ng-controller="moradorCtrl" ng-init="iniciar()">
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Morador</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Atual</a>
+            </li>
+            <li class="active">
+                <strong>{{pagAtual}}</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  
+
+    <div class="form-group">
+                            <div class="col-sm-4" ng-hide="statusAtual">
+                                     <button type="button" class="btn btn-outline btn-primary" ng-click="novo()"  >Novo Morador</button>
+
+                            </div>
+                            <div class="col-sm-4" ng-show="statusAtual" style="margin-bottom:15px;"> 
+          <button type="button" class="btn btn-outline btn-info" ng-click="voltar()" >Voltar</button>
+          <br/>
+                            </div>
+                        </div>
+
+    <div class="row" ng-show="statusAtual">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Cadastrados</h5>
+
+                <div ibox-tools></div>
+            </div>
+            <div class="ibox-content">
+
+
+
+                    <form  class="form-horizontal" >
+                        <div class="form-group">
+                         <label class="col-sm-2 control-label">Nome(*)</label>
+                            <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-model="credencial.identificacao"></div>
+                        </div>
+
+                         <div class="form-group">
+                         <label class="col-sm-2 control-label">Apartamento (*)</label>
+                            <div class="col-sm-4">
+                            <select class="form-control m-b" name="account">
+                                <option value="">Selecione um apartamento</option>
+                                <option>ap 101</option>
+                                <option>ap 102</option>
+                                <option>ap 103</option>                                
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Contato - 1 </label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Contato - 2 </label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+                         <div class="form-group">
+                         <label class="col-sm-2 control-label">Possui Veículo ?</label>
+                            <div class="col-sm-4">
+                            <div><label> <input  type="radio" name="radioTest" ng-model="isVeiculo" value="S"> Sim</label></div>
+                            <div><label> <input  type="radio" name="radioTest" ng-model="isVeiculo" value="N"> Não </label></div>
+                            </div>
+                        </div>
+
+                    <div ng-show="isVeiculo === 'S'">
+                        <div class="form-group"><label class="col-sm-2 control-label" >Placa </label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Modelo </label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Cor </label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                        </div>
+                    </div>
+
+
+
+                        <div class="form-group"><label class="col-sm-2 control-label" >Login (*)</label>
+                            <div class="col-sm-4"><input type="text" class="form-control" ng-model="credencial.secretKey"></div>
+                       </div>
+                    
+
+                        <div class="hr-line-dashed"></div>
+                       <div class="form-group">
+                            <div class="col-sm-2 col-sm-offset-2">
+                        <button type="button" class="btn btn-outline btn-success"  ng-click="cadastro()">Cadastrar Morador</button>
+                            </div>
+                        </div>                       
+                       
+</form></div></div></div></div></div>
+
+<div class="row" ng-hide="statusAtual">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Apartamentos cadastrados</h5>
+
+                <div ibox-tools></div>
+            </div>
+            <div class="ibox-content">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Unidade</th>
+                        <th>Propietário</th>
+                        <th>Contato - 1</th>
+                        <th>Contato - 2</th>
+                        <th>Login</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>5757</td>
+                        <td>jose</td>
+                        <td>33</td>
+                        <td>74</td>
+                        <td>rsa</td>
+                        <td>
+                            <i class="fa fa-trash"></i>
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-ban"></i>
+                            <i class="fa fa-check"></i>
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

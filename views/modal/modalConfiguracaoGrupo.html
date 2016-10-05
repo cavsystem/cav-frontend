@@ -1,0 +1,51 @@
+<div class="inmodal" ng-controller="maquinaAWSCtrl">
+    <div class="modal-header">
+        <i class="fa fa-lock modal-icon"></i>
+        <h4 class="modal-title">Configurações dos grupos de segurança</h4>
+        <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+    </div>
+    <div class="modal-body">
+         <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Group Id</th>
+                        <th>Owner Id</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>VPC Id</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in grupos">
+                        <td><a href ng-click="selecionar(item)">{{item.groupId}}</a></td>
+                        <td>{{item.ownerId}}</td>
+                        <td>{{item.groupName}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.vpcId}}</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+                 <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Portas range</th>
+                        <th>Protocolo</th>
+                        <th>Range ip</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in maquinaSelecionada">
+                        <td>{{item.fromPort}}-{{item.toPort}}</td>
+                        <td>{{item.protocol}}</td>
+                        <td>{{item.ipRange}}</td>
+                   </tr>
+                    
+                    </tbody>
+                </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-white" ng-click="cancel()">Close</button>
+    </div>
+</div>
